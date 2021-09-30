@@ -10,6 +10,7 @@ using std::string;
 using std::vector;
 using std::abs;
 
+
 enum class State {kEmpty, kObstacle};
 
 
