@@ -3,6 +3,7 @@
 using std::vector;
 using std::cout;
 
+// NOTE: This has to be below the other includes because the header file needs them. 
 #include "header_example.h"
 
 int IncrementAndComputeVectorSum(vector<int> v) 
