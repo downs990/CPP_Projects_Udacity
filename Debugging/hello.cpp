@@ -7,10 +7,6 @@ using std::cin;
 int main(){
 
     std::vector<std::string> brothers{"David", "Ethan", "Adam"};
-
-
-    
-
     for (std::string const& brother : brothers)
     {
         cout << "Hello " << brother << "!\n";
