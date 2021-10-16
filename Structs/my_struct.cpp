@@ -12,7 +12,7 @@ struct Date {
 
     
     private:
-        int day{1};
+        int day{1}; 
         int month{1};
         int year{0};
 };
