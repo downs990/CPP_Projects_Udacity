@@ -1,5 +1,7 @@
 #include <cassert>
 
+
+//Base class 
 class Heart{
     private: 
         int rate{80};
@@ -8,6 +10,7 @@ class Heart{
         friend class Human;
 };
 
+// Friend class 
 class Human{
     public:
         Heart heart;
