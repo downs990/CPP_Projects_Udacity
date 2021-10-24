@@ -45,8 +45,9 @@ private:
   // TODO: Declare private member variable radius
   double radius_;
 };
+ 
 
-// Test in main()
+ 
 int main() {
   double epsilon = 0.1; // useful for floating point equality
 
