@@ -17,10 +17,15 @@ int main(){
     - How to debug?
         gdb a
         list                   // to show the code
-        break 31               // set breakpoint at line 31
+        break 33               // set breakpoint at line 33
         run                    // run the program (until breakpoint)
-        step                   // the next line (line 32) has been executed and is stored in memory. 
-        p number               // print contents of the var number.
+        step                   // the next line (line 34) has been executed and is stored in memory. 
+        p myMessage                   // print contents of the var myMessage.
+        p &myMessage                  // prints the memory address of myMessage. 
+        x/8tb <address of myMessage>  // print 8 successive bytes(b) in binary form(t) 
+
+        output shown to screen: (binary form of "Courtney") 
+        01000011   01101111   01110101   01110010   01110100   01101110   01100101   01111001 
     */
     vector<string> brothers{"David", "Ethan", "Adam"};
     for (string const& brother : brothers)
@@ -28,7 +33,7 @@ int main(){
         cout << "Hello " << brother << "!\n";
     }
 
-
+    char myMessage[] = "Courtney";
     int number = 0;
     cout << "Please enter a number: ";
     
