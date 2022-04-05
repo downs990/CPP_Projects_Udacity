@@ -48,11 +48,29 @@ public:
 };
 
 
+MyMovableClass createObject(int size){
+  MyMovableClass obj(size); // regular constructor
+  return obj; // return MyMovableClass object by value
+}
+
+
+
 int main()
 {
     MyMovableClass obj1(10); // regular constructor
     MyMovableClass obj2(obj1); // copy constructor
     obj2 = obj1; // copy assignment operator
+	
+	// Note that when a function returns an object by value, the 
+	// compiler creates a temporary object as an rvalue. 
+	MyMovableClass obj3 = obj1;
+	// Here, we are instantiating obj3 in the same statement; 
+	// hence the copy assignment operator would not be called.
 
+	MyMovableClass obj4 = createObject(10);
+	// createObject(10) returns a temporary copy of the object as an rvalue, which is passed to the copy constructor.
+  
+  
+  
     return 0;
 }
