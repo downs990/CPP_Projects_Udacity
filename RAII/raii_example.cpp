@@ -42,12 +42,18 @@ int main()
 				
 		// Example 2: RAII 
 		
-				// allocate the resource on the stack
+				// allocate the resource on the stack (which, internally, created an integer on the heap using "new")
 				MyInt en(new int(i));
 
 				// use the resource
 				std::cout << *en << "/" << den[i] << " = " << *en / den[i] << std::endl;
-    }
+    
+	
+				// NOTE: Because the MyInt object en lives on the stack, it 
+				//      is automatically deallocated after each loop cycle - which calls 
+				//      the destructor to release the heap memory. 
+	
+	}
     }
 
     return 0;
