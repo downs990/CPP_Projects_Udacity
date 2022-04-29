@@ -29,6 +29,8 @@ public:
         }
             
     }
+
+    // step 1: override copy constructor 
     ExclusiveCopy(ExclusiveCopy &source)
     {
         _myInt = source._myInt;
@@ -41,7 +43,9 @@ public:
 		// it is set to nullptr. In concurrent programs, this would cause a data race for the resource. 
 		//A much better alternative to handle exclusive ownership in C++ would be to use "move semantics".
     }
-    ExclusiveCopy &operator=(ExclusiveCopy &source)
+
+    // step 2: override assignment operator 
+    ExclusiveCopy& operator=(ExclusiveCopy &source)
     {
         _myInt = source._myInt;
         source._myInt = nullptr;
