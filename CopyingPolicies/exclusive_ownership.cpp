@@ -13,11 +13,15 @@ private:
     int *_myInt;
 
 public:
+
+    // step 1: Allocate memory in constructor for the variable 
     ExclusiveCopy()
     {
         _myInt = (int *)malloc(sizeof(int));
         std::cout << "resource allocated" << std::endl;
     }
+
+    // step 2: Deallocate that memory properly in destructor 
     ~ExclusiveCopy()
     {
 		// This prevents a double deletion error. It will only be deleted if 
@@ -30,7 +34,7 @@ public:
             
     }
 
-    // step 1: override copy constructor 
+    // step 3: override copy constructor 
     ExclusiveCopy(ExclusiveCopy &source)
     {
         _myInt = source._myInt;
@@ -44,7 +48,7 @@ public:
 		//A much better alternative to handle exclusive ownership in C++ would be to use "move semantics".
     }
 
-    // step 2: override assignment operator 
+    // step 4: override assignment operator 
     ExclusiveCopy& operator=(ExclusiveCopy &source)
     {
         _myInt = source._myInt;

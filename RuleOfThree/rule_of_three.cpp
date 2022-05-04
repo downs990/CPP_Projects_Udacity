@@ -34,13 +34,14 @@ public:
     }
 
     // 3 : copy assignment operator
-    MyMovableClass &operator=(const MyMovableClass &source)    
+    MyMovableClass& operator=(const MyMovableClass &source)    
     {
         std::cout << "ASSIGNING content of instance " << &source << " to instance " << this << std::endl;
         
         // Protects against self assignment. 
         if (this == &source)
             return *this;
+
         delete[] _data;
         _data = new int[source._size];
         *_data = *source._data;
@@ -60,7 +61,7 @@ public:
     }
 	
 	// 5 : move assignment operator
-	MyMovableClass &operator=(MyMovableClass &&source)  
+	MyMovableClass& operator=(MyMovableClass &&source)  
     {
         std::cout << "MOVING (assign) instance " << &source << " to instance " << this << std::endl;
         if (this == &source)
