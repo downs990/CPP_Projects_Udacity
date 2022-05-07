@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <iostream>
 
 // RAII memory management class
 class MyInt
@@ -54,7 +56,6 @@ int main()
 				//      the destructor to release the heap memory. 
 	
 	}
-    }
 
     return 0;
 }
