@@ -19,8 +19,8 @@ int main()
 {
     // create thread
     Vehicle v1, v2;
-    std::thread t1 = std::thread(&Vehicle::addID, v1, 1); // call member function on object v
-    std::thread t2 = std::thread(&Vehicle::addID, &v2, 2); // call member function on object v
+    std::thread t1 = std::thread(&Vehicle::addID, v1, 1); // call member function on object v1
+    std::thread t2 = std::thread(&Vehicle::addID, &v2, 2); // call member function on object v2
 
     // wait for thread to finish
     t1.join();
