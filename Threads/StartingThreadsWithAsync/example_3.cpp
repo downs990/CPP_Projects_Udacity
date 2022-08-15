@@ -27,6 +27,16 @@ int main()
     
     // launch various tasks
     std::vector<std::future<void>> futures;
+
+
+    // Example cases: 
+
+    //int nLoops = 1e7 , nThreads = 4 , std::launch::async        overall runtime: ~45 milliseconds
+    //int nLoops = 1e7 , nThreads = 5 , std::launch::deferred     overall runtime: ~126 milliseconds
+    //int nLoops = 10 , nThreads = 5 , std::launch::async         overall runtime: ~3 milliseconds
+    //int nLoops = 10 , nThreads = 5 , std::launch::deferred      overall runtime: 0.01 milliseconds 
+
+
     int nLoops = 10, nThreads = 5;
     for (int i = 0; i < nThreads; ++i)
     {
