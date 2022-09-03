@@ -5,7 +5,7 @@ int main()
 {
 	
 	//  We can access the internal reference count by using the method
-	// .use_count(). 
+	// .use_count()... 
 	
 	// In the inner block, a second shared pointer shared2
 	// is created and shared1 is assigned to it. In the copy constructor of
