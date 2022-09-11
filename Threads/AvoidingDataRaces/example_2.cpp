@@ -7,7 +7,7 @@
 Description: 
 The basic program structure is mostly identical to the previous example with the object v0 
 being copied by value when passed to the thread function. This time however, even though a
- copy has been made, the original object v0 is modified, when the thread function sets the 
+ copy has been made, the original object v0 is modified when the thread function sets the 
  new name. This happens because the member _name is a pointer to a string and after copying, 
  even though the pointer variable has been duplicated, it still points to the same location 
  as its value (i.e. the memory location) has not changed. 

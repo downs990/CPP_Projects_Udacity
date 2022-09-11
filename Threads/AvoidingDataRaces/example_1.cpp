@@ -39,7 +39,10 @@ int main()
 
     v0.setID(3);
 
-    ftr.wait();
+    ftr.wait(); 
+    // IMPORTANT: v0.getID() expected result at this point is 2. However, it was passed to the 
+    //        thread using pass-by-value, therefore when it's changed to 2, that doesn't persist.
+    //        This means the output below will not show the change to 2.
     std::cout << "Vehicle #" << v0.getID() << std::endl;
 
     return 0;
