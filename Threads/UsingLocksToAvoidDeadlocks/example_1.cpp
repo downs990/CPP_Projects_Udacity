@@ -20,6 +20,13 @@ void divideByNumber(double num, double denom)
         // divide num by denom but throw an exception if division by zero is attempted
         if (denom != 0) 
         {
+
+            // IMPORTANT: 
+            // We now have a std::lock_guard object that takes the mutex 
+            // as an argument and locks it at creation. When the method divideByNumber 
+            // exits, the mutex is automatically unlocked by the std::lock_guard object
+            // as soon as it is destroyed - which happens, when the local variable gets
+            // out of scope.
             std::lock_guard<std::mutex> lck(mtx);
             
             result = num / denom;
